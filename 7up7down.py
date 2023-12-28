@@ -58,17 +58,18 @@ def roll_die(bet, amount):
 
 def main():
     gain = 0
+    options = ["up", "down", "equal"]
     while(True):
-        bet = input("Place bet (Up/Down/Equal): ")
-        amount = int(input("Bet amount: "))
-        gain -= amount
-        amount = roll_die(bet, amount)
-        gain += amount
-        if(gain >= 0):
-            print("you have gained", gain)
+        bet = input("Place bet (Up/Down/Equal): ").lower()
+        if(bet not in options):
+            print("invalid input")
         else:
-            print("you have lost", -1*gain)
-        roll_again = input("Roll again? (Yes/No): ")
+            amount = int(input("Bet amount: "))
+            gain -= amount
+            amount = roll_die(bet, amount)
+            gain += amount
+            print("You are", gain)
+        roll_again = input("Go again? (Yes/No): ")
         if(roll_again.lower() == "no"):
             break
 

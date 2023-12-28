@@ -6,18 +6,21 @@ def main():
     while(True):
         options = ["rock", "paper", "scissors"]
         computer_pick = options[random.randint(0,2)]
-        user_pick = input("rock/paper/scissors: ")
-        print("Computer chose:", computer_pick)
-        if (user_pick.lower() == "rock" and computer_pick.lower() == "scissors") or (user_pick.lower() == "scissors" and computer_pick.lower() == "paper") or (user_pick.lower() == "paper" and computer_pick.lower() == "rock"):
-            print("you win")
-            user_score += 1
-        elif(user_pick == computer_pick):
-            print("draw")
-            user_score += 0.5
-            computer_score += 0.5
+        user_pick = input("rock/paper/scissors: ").lower()
+        if(user_pick not in options):
+            print("invalid input")
         else:
-            print("you lose")
-            computer_score += 1
+            print("Computer chose:", computer_pick)
+            if (user_pick == "rock" and computer_pick == "scissors") or (user_pick == "scissors" and computer_pick == "paper") or (user_pick == "paper" and computer_pick == "rock"):
+                print("you win")
+                user_score += 1
+            elif(user_pick == computer_pick):
+                print("draw")
+                user_score += 0.5
+                computer_score += 0.5
+            else:
+                print("you lose")
+                computer_score += 1
         run = input("another round? (Yes/No): ")
         if(run.lower() == "no"):
             break
