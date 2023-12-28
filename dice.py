@@ -48,7 +48,7 @@ def roll_die(bet, amount):
         print("which is 7 down")
     else: 
         print("which is exactly 7")
-    if((bet.lower() == "down" and x+y<7) or (bet.lower == "up" and x+y>7)):
+    if((bet.lower() == "down" and x+y<7) or (bet.lower() == "up" and x+y>7)):
         amount = amount*2 
     elif(bet.lower() == "equal" and x+y == 7):
         amount = amount*5
