@@ -2,7 +2,7 @@ import random
 from words import words
 import string
 
-GUESSES = 8
+GUESSES = 7
 
 def is_valid_word(word):
     if ' ' not in word and '-' not in word and 3<=len(word)<=6:
