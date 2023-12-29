@@ -9,7 +9,7 @@ def main():
     pass_length = int(input("what length password would you like: "))
     password = ""
     for i in range (pass_length):
-        password += (characters[i])
+        password += random.choice(characters)
     print(password)
 
 if __name__ == "__main__":
