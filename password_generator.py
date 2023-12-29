@@ -2,7 +2,7 @@ import random
 import string
 
 def main():
-    #usign string library to make a list of all characters
+    #using string module to make a list of all characters
     characters = list(string.ascii_letters + string.digits + "!@#$%^&*()")
     random.shuffle(characters)
 
